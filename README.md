@@ -1,5 +1,7 @@
 # Welcome to test project online shop on NuxtJs
-If you want run the project on your computer you need to download the project archive or write cmd command **git clone https://github.com/Evg-msk/ida_project_shop.git** and open it on your computer and run the command **npm run dev**
+If you want run the project on your computer you need to download the project archive 
+or write cmd command **git clone https://github.com/Evg-msk/ida_project_shop.git** and open it on your computer 
+and run the command in the code editor or console **npm run dev**
 ## Build Setup
 
 ```bash
