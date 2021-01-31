@@ -1,9 +1,5 @@
 <template>
   <section :class="$style.backpacks">
-<!--    <CartBox-->
-<!--      v-if="cart.length"-->
-<!--      :cart_data="cart"-->
-<!--    />-->
     <CatalogItem
       :bag_item="bag"
       v-for="bag of bags" :key="bag.id"
@@ -17,7 +13,6 @@
 <script>
   import { mapActions } from 'vuex'
   import CatalogItem from "../../components/CatalogItem";
-  // import CartBox from "../CartBox";
     export default {
         name: 'Backpacks',
         async fetch({store}) {
@@ -46,11 +41,10 @@
             },
             addToCart(data) {
                 this.addItemToCart(data)
-            }
+            },
         },
         components: {
-            CatalogItem,
-            // CartBox
+            CatalogItem
         }
     };
 </script>

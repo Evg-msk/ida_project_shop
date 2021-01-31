@@ -6,6 +6,7 @@
           :class="$style.cart"
           @click="addToCart"
         ></span>
+        <span v-show="isVisible" :class="$style.addDescr">Товар добавлен в корзину!</span>
       </div>
       <div :class="$style.img"></div>
       <h1 :class="$style.title">{{bag_item.name}}</h1>
@@ -23,13 +24,17 @@
                 }
             }
         },
-        data() {
-            return {};
-        },
+        data: () => ({
+          isVisible: false,
+        }),
         methods: {
             addToCart() {
-                this.$emit('addToCart', this.bag_item)
-            }
+                this.$emit('addToCart', this.bag_item);
+                this.isVisible = !this.isVisible;
+                setTimeout(() => {
+                        this.isVisible = !this.isVisible
+                    }, 1000);
+            },
         },
         components: {},
     };
@@ -41,10 +46,8 @@
     justify-content: space-between
     vertical-align: baseline
   .rate
-    font-family: PT Sans
     position: relative
-    font-style: normal
-    font-weight: bold
+    font-weight: 700
     font-size: 10px
     color: #F2C94C
     &::before
@@ -70,7 +73,17 @@
     background: url("../assets/item_cart.svg") center (center/contain) no-repeat
     &:hover
       background: url("../assets/item_cart_hover.svg") center (center/contain) no-repeat
+  .addDescr
+    font-size: 16px
+    border: 1px solid #7F828B
+    border-radius: 6px
+    background-color: #7F828B
+    position: absolute
+    top: 120px
+    right: 40px
+    color: #fff
   .catalog__item
+    position: relative
     width: 264px
     min-height: 272px
     background: #FFFFFF
@@ -92,9 +105,7 @@
     height: 180px
     background: url("../assets/bag.png") center (center/cover) no-repeat
   .title
-    font-family: PT Sans
-    font-style: normal
-    font-weight: normal
+    font-weight: 400
     font-size: 14px
     color: #59606D
     margin-top: 16px

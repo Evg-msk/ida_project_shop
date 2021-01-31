@@ -1,5 +1,5 @@
 <template>
-    <div class="empty">
+    <div :class="$style.empty">
         <Nuxt/>
     </div>
 </template>
@@ -12,8 +12,10 @@
     };
 </script>
 
-<style lang="scss">
-    .empty {
-
-    }
+<style lang="sass" module>
+    .empty
+      display: flex
+      justify-content: flex-end
+      align-items: flex-end
+      margin: 10px 5px
 </style>

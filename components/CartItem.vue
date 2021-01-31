@@ -7,9 +7,6 @@
           <p :class="$style.price">{{cart_item_data.price}} ₽</p>
           <span :class="$style.rate"></span>
         </div>
-        <div :class="$style.quantity">
-          <p>Кол-во</p>
-          {{cart_item_data.quantity}}</div>
         <button
           :class="$style.delete"
           @click="deleteFromCart"
@@ -37,9 +34,6 @@
                 this.$emit('deleteFromCart')
             }
         },
-        mounted() {
-          this.$set(this.cart_item_data, 'quantity', 1)
-        },
         components: {},
     };
 </script>
@@ -64,23 +58,40 @@
   .info_wrap
     display: flex
     flex-direction: column
-    align-items: center
     margin-left: 34px
+    text-align: left
   .title
-    font-family: PT Sans
-    font-style: normal
-    font-weight: normal
+    font-weight: 400
     font-size: 14px
     line-height: 18px
     color: #59606D
   .price
-    font-family: PT Sans
-    font-style: normal
-    font-weight: bold
+    font-weight: 700
     font-size: 14px
     line-height: 18px
     color: #1F1F1F
     margin-top: 6px
+  .rate
+    position: relative
+    margin-top: 19px
+    font-weight: 700
+    font-size: 10px
+    color: #F2C94C
+    &::before
+      position: absolute
+      top: 0
+      display: inline-block
+      content: ""
+      width: 17px
+      height: 17px
+      background: url("../assets/rate_star.svg") center (center/cover) no-repeat
+      margin-right: 4px
+    &::after
+      position: absolute
+      top: 2px
+      left: 18px
+      display: inline-block
+      content: "4.5"
   .delete
     display: inline-block
     content: ""
@@ -88,10 +99,7 @@
     height: 22px
     border: none
     background: url("../assets/delete.svg") center (center/contain) no-repeat
+    outline: none
     &:hover
       background: url("../assets/delete_hover.svg") center (center/contain) no-repeat
-  .quantity
-    font-size: 13px
-    text-align: center
-    color: #000
 </style>

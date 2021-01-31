@@ -50,9 +50,7 @@
     display: flex
     align-items: center
     height: 21px
-    font-family: PT Sans
-    font-style: normal
-    font-weight: normal
+    font-weight: 400
     font-size: 16px
     color: #1F1F1F
   .select
@@ -77,9 +75,7 @@
     border: 0
     -webkit-appearance: none
     appearance: none
-    font-family: PT Sans
-    font-style: normal
-    font-weight: normal
+    font-weight: 400
     font-size: 16px
     color: #59606D
     &:focus

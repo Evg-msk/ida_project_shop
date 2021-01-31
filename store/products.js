@@ -17,7 +17,6 @@ export const mutations = {
       state.cart.map(i => {
         if(i.id === bag.id) {
           isBagExist = true;
-          i.quantity++
         }
       });
       if(!isBagExist) {
@@ -26,7 +25,6 @@ export const mutations = {
     } else {
       state.cart.push(bag)
     }
-
   },
   removeFromCart(state, index) {
     state.cart.splice(index, 1)
@@ -55,5 +53,5 @@ export const actions = {
 export const getters = {
   categories: state => state.categories,
   bags: state => state.bags,
-  cart: state => state.cart
+  cart: state => state.cart,
 };

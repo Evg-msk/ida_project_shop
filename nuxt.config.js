@@ -11,17 +11,20 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"}
     ]
   },
 
   loading: { color: '#green' },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "~/assets/styles.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@plugins/v-mask.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,17 +36,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
-    'nuxt-webfontloader'
+    '@nuxtjs/axios'
   ],
 
-  webfontloader: {
-    events: false,
-    google: {
-      families: ['PT+Sans:400,700:cyrillic&display=swap']
-    },
-    timeout: 5000
-  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
